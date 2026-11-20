@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Alisha Newton-Rudhru's portfolio case study on building and testing a reusable AI workflow for customer satisfaction reporting.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>AI Research Workflow | Alisha Newton-Rudhru</title>
+  <style>
+:root{color-scheme:light;--paper:#fff;--white:#fff;--ink:#172d32;--muted:#52666b;--accent:#146457;--dark:#143e37;--cream:#eff7f2;--line:#dce5e3;--serif:Georgia,'Times New Roman',serif;--sans:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:2rem}body{margin:0;color:var(--ink);background:var(--paper);font:1rem/1.7 var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-underline-offset:.25em}h1,h2,h3,p{margin-top:0}h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.045em}h1{font-size:clamp(3rem,5.5vw,4.9rem);line-height:1.08;margin-bottom:1.5rem;max-width:12ch}h2{font-size:clamp(2rem,3.6vw,3rem);line-height:1.16;margin-bottom:1.3rem}h3{font-size:1.1rem;line-height:1.4;margin-bottom:.65rem}button,input{font:inherit}:focus-visible{outline:3px solid #b56b27;outline-offset:5px}.wrap{width:min(1120px,calc(100% - 6rem));margin-inline:auto}.skip{position:absolute;z-index:10;top:1rem;left:1rem;padding:.7rem 1rem;background:white;transform:translateY(-200%)}.skip:focus{transform:none}.label{color:var(--accent);text-transform:uppercase;letter-spacing:.14em;font-size:.875rem;font-weight:650;margin-bottom:1.25rem}
+.masthead{border-bottom:1px solid var(--line)}.masthead-inner{min-height:88px;display:flex;gap:1rem;justify-content:space-between;align-items:center}.author{font-size:1rem;font-weight:650;letter-spacing:-.025em;text-decoration:none}nav{display:flex;gap:2rem}nav a{color:var(--muted);font-size:.9375rem;text-decoration:none}nav a:hover{color:var(--accent);text-decoration:underline}.hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:center;gap:clamp(2.5rem,6vw,5rem);padding-block:clamp(4rem,8vw,7rem)}.lead{max-width:35rem;color:var(--muted);font-size:1.0625rem;line-height:1.8;margin-bottom:2rem}.button{display:inline-flex;padding:.85rem 1.3rem;background:var(--dark);color:white;border-radius:6px;text-decoration:none;font-size:.9375rem;font-weight:600;transition:background .15s}.button:hover{background:#225b4e}.hero-preview{background:var(--dark);color:var(--cream);border:1px solid #285248;border-radius:12px;overflow:hidden;box-shadow:0 18px 45px #143e3712}.preview-top{padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.65rem;border-bottom:1px solid #ffffff26;font-size:.9375rem;font-weight:550}.chip{font-size:.8125rem;font-weight:500;border:1px solid #ffffff45;border-radius:99px;padding:.15rem .6rem;color:#d5e8dd}.preview-content{padding:2.25rem 1.5rem 1.75rem}.preview-score{display:flex;align-items:end;flex-wrap:wrap;gap:1.2rem;margin-bottom:1.5rem}.preview-score strong{font:400 5.5rem/.95 var(--serif);letter-spacing:-.07em}.preview-score strong span{font-size:.6em}.preview-score>span{color:#d1e4da;font-size:.875rem;line-height:1.5}.rating-bar{height:.45rem;background:#ffffff20;border-radius:4px;overflow:hidden}.rating-bar span{display:block;width:60%;height:100%;background:#bedcc9}.preview-status{display:flex;align-items:center;gap:.6rem;font-size:.9375rem;font-weight:600;margin:1.6rem 0 .55rem}.preview-status span{border-radius:50%;width:.5rem;height:.5rem;background:#eac28a}.preview-note{color:#d1e4da;font-size:.9375rem;line-height:1.7;margin:0}
+.workflow{border-top:1px solid var(--line);padding-block:3.5rem 5rem}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin:2rem 0 0;padding:0;list-style:none}.steps li{padding-top:1.3rem;border-top:2px solid #acc7bc}.steps p{color:var(--muted);margin:0;font-size:1rem}.demo-section{background:#f3f7f5;border-block:1px solid var(--line);padding-block:clamp(3.5rem,7vw,5.5rem)}.section-intro{max-width:44rem;color:var(--muted);margin-bottom:2rem}.case-picker{display:flex;flex-wrap:wrap;gap:.65rem;border:0;padding:0;margin:0 0 1.5rem}.case-picker legend{font-weight:600;font-size:.875rem;margin-bottom:.75rem}.case-picker label{position:relative;cursor:pointer}.case-picker input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:pointer}.case-picker span{display:block;border:1px solid #b9ccc5;background:white;padding:.6rem 1rem;border-radius:6px;font-size:.9375rem;font-weight:550}.case-picker input:checked+span{background:var(--dark);border-color:var(--dark);color:white}.case-picker input:focus-visible+span{outline:3px solid #b56b27;outline-offset:4px}.demo-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:1.25rem;align-items:stretch}.demo-card{padding:clamp(1.25rem,3vw,2rem);background:white;border:1px solid var(--line);border-radius:10px;min-width:0}.demo-card>p{color:var(--muted)}.expectation{display:grid;gap:.35rem;padding:1rem 0;margin:1.25rem 0;border-block:1px solid var(--line)}.expectation strong{color:var(--accent);font-size:.875rem}details summary{width:fit-content;cursor:pointer;color:var(--accent);font-size:.9375rem;font-weight:600}details p{margin-top:1rem;font-size:.9375rem}.table-wrap{overflow-x:auto;margin-top:1rem}table{border-collapse:collapse;width:100%;font-size:.875rem;text-align:left}caption{text-align:left;color:var(--muted);padding-bottom:.6rem}th,td{border-bottom:1px solid var(--line);padding:.5rem .4rem}th{color:var(--muted);font-weight:600}.result-card{border-top:3px solid #648e7e}.result-score{display:flex;flex-wrap:wrap;align-items:baseline;gap:.65rem 1rem;margin:1.75rem 0 1rem}.result-score strong{font:400 4.5rem/1 var(--serif);letter-spacing:-.06em;color:var(--accent)}.result-score span{color:var(--muted);font-size:.9375rem}meter{width:100%;height:.75rem;accent-color:var(--accent)}meter::-webkit-meter-bar{background:#e5eeea;border:0;border-radius:8px}meter::-webkit-meter-optimum-value{background:#648e7e;border-radius:8px}.result-card p{margin:1.25rem 0 0}.teaching{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;padding-block:5rem}.teaching p{max-width:47rem;color:var(--muted);margin:0}footer{border-top:1px solid var(--line);color:var(--muted);padding-block:1.75rem;font-size:.875rem}footer p{margin:0}footer span{padding-inline:.4rem}
+@media(max-width:800px){.wrap{width:calc(100% - 3rem)}.hero{gap:2rem}h1{font-size:3.5rem}.preview-score strong{font-size:4.5rem}.preview-top,.preview-content{padding:1.25rem}.teaching{gap:2rem}.steps{gap:1.5rem}}
+@media(max-width:680px){.hero,.demo-grid,.teaching{grid-template-columns:1fr}.hero{padding-block:3rem;gap:2.5rem}h1{font-size:clamp(2.8rem,9vw,4rem);max-width:15ch}.hero-preview{max-width:none}.masthead-inner{min-height:80px;flex-wrap:wrap;gap:.5rem;padding-block:1rem}nav{gap:1.25rem}.steps{grid-template-columns:1fr;gap:1.5rem}.workflow,.teaching{padding-block:3rem}.teaching{gap:.5rem}.preview-score{flex-wrap:nowrap}.demo-card{padding:1.5rem}.wrap{width:calc(100% - 2.5rem)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+
+</style>
+  
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="author" href="#main">Alisha Newton-Rudhru</a>
+      <nav aria-label="Case study"><a href="#workflow">Workflow</a><a href="#demo">Demo</a></nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="headline">
+      <div>
+        <p class="label">AI workflow case study</p>
+        <h1 id="headline">From survey responses to a report you can check</h1>
+        <p class="lead">I built a reusable OpenAI Codex skill for customer satisfaction reporting. It helps me apply consistent scoring rules, draft findings, and see which conclusions need more evidence.</p>
+        <a class="button" href="#demo">Try the worked example</a>
+      </div>
+      <aside class="hero-preview" aria-label="A sample report excerpt">
+        <div class="preview-top"><span>Customer satisfaction</span><span class="chip">Fictional sample</span></div>
+        <div class="preview-content">
+          <div class="preview-score"><strong>60<span>%</span></strong><span>6 of 10 valid ratings<br>were 4 or 5 out of 5</span></div>
+          <div class="rating-bar" aria-hidden="true"><span></span></div>
+          <p class="preview-status"><span aria-hidden="true"></span> Segment comparison pending</p>
+          <p class="preview-note">The overall score uses the survey responses. Segment comparisons need customer profiles.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="workflow wrap" id="workflow" aria-labelledby="workflow-title">
+      <h2 id="workflow-title">How I designed the workflow</h2>
+      <ol class="steps">
+        <li><h3>Define the inputs</h3><p>Start with the survey responses and scoring rules. Add customer profiles when they’re available.</p></li>
+        <li><h3>Specify the output</h3><p>Show the overall score and how many responses it uses. Keep findings tied to the source evidence.</p></li>
+        <li><h3>Test what breaks</h3><p>Try missing profile data and repeated responses. Check the result against a score you can calculate by hand.</p></li>
+      </ol>
+    </section>
+
+    <section class="demo-section" id="demo" aria-labelledby="demo-title">
+      <div class="wrap">
+        <p class="label">Worked example</p>
+        <h2 id="demo-title">What should the assistant do?</h2>
+        <p class="section-intro">Choose a case to see how the scoring rules handle it. This browser demo calculates the expected result from fictional survey rows.</p>
+        <fieldset class="case-picker">
+          <legend>Select a test case</legend>
+          <label><input type="radio" name="demo-case" value="missing" checked><span>Missing profile data</span></label>
+          <label><input type="radio" name="demo-case" value="duplicate"><span>Duplicate response</span></label>
+        </fieldset>
+        <div class="demo-grid" aria-live="polite">
+          <div class="demo-card case-card">
+            <h3 id="case-title">Profile file is missing</h3>
+            <p id="case-description">The survey export has 10 valid ratings. The file that assigns customers to segments hasn’t arrived.</p>
+            <p class="expectation"><strong>Pass condition</strong><span id="expectation">Report 60% overall satisfaction and mark the segment comparison as pending.</span></p>
+            <details>
+              <summary>Inspect the input rows</summary>
+              <p id="dedupe-rule" hidden>For this sample, keep the latest rating for each respondent. The second R08 row comes later.</p>
+              <div class="table-wrap"><table>
+                <caption>Fictional response rows, in arrival order</caption>
+                <thead><tr><th scope="col">Respondent</th><th scope="col">Rating</th><th scope="col">Used in score</th></tr></thead>
+                <tbody id="rows"></tbody>
+              </table></div>
+            </details>
+          </div>
+          <div class="demo-card result-card">
+            <h3>Expected report output</h3>
+            <div class="result-score"><strong id="score">60%</strong><span id="base">6 of 10 valid ratings were 4 or 5.</span></div>
+            <meter id="score-meter" min="0" max="100" value="60" aria-label="Overall satisfaction">60%</meter>
+            <p id="result-note">Segment comparison pending. Customer profiles are required to calculate it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="teaching wrap" aria-labelledby="teaching-title">
+      <h2 id="teaching-title">How I’d teach it</h2>
+      <p>I’d ask learners to bring a task they repeat at work and write down one result they can verify themselves. Then we’d introduce a missing input or a duplicate, compare what the assistant did with what they expected, and revise the instructions together.</p>
+    </section>
+  </main>
+
+  <footer class="wrap"><p>Alisha Newton-Rudhru <span>·</span> UX Research and Learning Design</p></footer>
+<script>
+const ratings = [5, 4, 5, 4, 5, 4, 3, 2, 1, 3];
+const survey = ratings.map((rating, index) => ({ id: `R${String(index + 1).padStart(2, '0')}`, rating }));
+
+const cases = {
+  missing: {
+    rows: survey,
+    title: 'Profile file is missing',
+    description: 'The survey export has 10 valid ratings. The file that assigns customers to segments hasn’t arrived.',
+    pass: 'Report 60% overall satisfaction and mark the segment comparison as pending.',
+    note: 'Segment comparison pending. Customer profiles are required to calculate it.',
+  },
+  duplicate: {
+    rows: [...survey, { id: 'R08', rating: 5 }],
+    title: 'One respondent submits twice',
+    description: 'The export has 11 ratings from 10 respondents. R08 submitted a 2 and later updated it to a 5.',
+    pass: 'Use the latest R08 response and report 70% overall satisfaction based on 10 respondents.',
+    note: 'R08’s later rating of 5 replaces the earlier rating of 2. The score still uses 10 respondents.',
+  },
+};
+
+function scoreCase(rows) {
+  const latest = new Map(rows.map(row => [row.id, row]));
+  const selected = [...latest.values()];
+  const satisfied = selected.filter(row => row.rating >= 4).length;
+  return { latest, count: selected.length, satisfied, percent: Math.round(100 * satisfied / selected.length) };
+}
+
+const byId = id => document.getElementById(id);
+
+function renderCase(name) {
+  const current = cases[name];
+  const { latest, count, satisfied, percent } = scoreCase(current.rows);
+  byId('case-title').textContent = current.title;
+  byId('case-description').textContent = current.description;
+  byId('expectation').textContent = current.pass;
+  byId('dedupe-rule').hidden = name !== 'duplicate';
+  byId('score').textContent = `${percent}%`;
+  byId('base').textContent = `${satisfied} of ${count} valid ratings were 4 or 5.`;
+  byId('score-meter').value = percent;
+  byId('score-meter').textContent = `${percent}%`;
+  byId('result-note').textContent = current.note;
+  const inputRows = current.rows.map(row => {
+    const entry = document.createElement('tr');
+    const values = [row.id, String(row.rating), latest.get(row.id) === row ? 'Yes' : 'No, replaced'];
+    for (const value of values) {
+      const cell = document.createElement('td');
+      cell.textContent = value;
+      entry.append(cell);
+    }
+    return entry;
+  });
+  byId('rows').replaceChildren(...inputRows);
+}
+
+const picker = document.querySelector('.case-picker');
+picker.addEventListener('change', event => renderCase(event.target.value));
+renderCase(picker.querySelector('input:checked').value);
+</script>
+</body>
+</html>
